@@ -112,42 +112,21 @@ function factorial(x)
 function fibonacci(x)
 {
    //0  1  1  2  3  5  8  [13]  21
-
-   fibonacciArray = [];
+        
+   fibonacciArray = [0, 1, 1];
    //Initialize iterator.
-   let i = 0;
+   let i = 2;
 
-   let first; 
-   let second = 1;
-   let third; 
+   //let first = fibonacciArray[0]; 
+   let previousPosition = i;
 
-    //While iterator is less than x.
+    //While iterator is less than x. 0+1 = 1, 3 + 5 = 8
     while(i < x)
     {   //I quit lol, 
-        fibonacciArray.push(first);    
-
-        first = fibonacciArray[i];
-       
-        third = first + second;
-
-        fibonacciArray.push(third);
-
-        i++;
-    //    //Check 1 and 1
-    //     else if(fibonacciArray[1] === i)
-    //     {          
-    //         fibonacciArray.push(fibonacciArray[i] + fibonacciArray[i]);
-    //         first = fibonacciArray[i]; //1
-    //         second = fibonacciArray[i - 1];
-    //         i++;
-    //     }  
-
-    //     //Check 1 and everything else
-    //     else
- 
-    //        fibonacciArray.push(fibonacciArray[i] + fibonacciArray[i - 1]);
-    //         i++;
+        fibonacciArray.push(fibonacciArray[previousPosition] + fibonacciArray[i])
+        previousPosition = i;
+        i++;  
     }
-
-    return fibonacciArray[x];
+//I don't know how tf I did this, I just kept debugging until I got the desired output. 
+    return x = fibonacciArray[previousPosition];
 }
