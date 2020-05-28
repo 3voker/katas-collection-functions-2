@@ -4,7 +4,7 @@ let ohGodAnArray = [];
 
 let result = 0; 
 
-//probably the only thing that took me 1 minute. 
+
 function add(x, y)
 {
     return x+y;
@@ -18,15 +18,15 @@ function multiply(x, y)
 //While iterator is less than y 
     while(i < y)
     {
-        //Incremeent result by x; 
-        result += x;
+        //Increment result by x; 
+        result = add(result, x);
         i++;
     }
 
     return result;
 }
 
-//Fixed, took 30 mins
+//Exponent is still wrong, fix it dudes 5/26/2020
 function exponent(x, y)
 {              
    //Clear array before use to dump any previous values inside of it.
@@ -48,20 +48,22 @@ function exponent(x, y)
     //Initialize iterator to increment to array length. 
     i = 0;
 
+    let combinedArrayResult;
     //While iterator is less than array length.. 
     while(i < ohGodAnArray.length)
     { 
        //Incremenent result by x.. 
-       result += x;
+     
+       combinedArrayResult = add(ohGodAnArray[i], ohGodAnArray[i]);
        //Every loop until iterator is equal to array length.. 
        i++;
     }
 
     //Return result. 
-    return result;
+    return result = add(combinedArrayResult, result);
 }
 
-//Took 20 minutes
+
 function factorial(x)
 {            
    //Clear array before use to dump any previous values inside of it.
@@ -73,7 +75,7 @@ function factorial(x)
    //Initialize result.
    result = 0;
 
-   let factorial = x - 1;
+   let factorial = add(x, -1);
     
      //While tracked array length iterator is less than y..
      while(amountInsideArray < x)
@@ -100,7 +102,7 @@ function factorial(x)
         while(position < ohGodAnArray[i])
         {
             //Increment result by x;
-            result += x;
+            add(result, x);
             position++; 
         }
          i++;
@@ -108,7 +110,7 @@ function factorial(x)
 
     return result;
 }
-//40 minutes
+
 function fibonacci(x)
 {
    //0  1  1  2  3  5  8  [13]  21
@@ -122,11 +124,11 @@ function fibonacci(x)
 
     //While iterator is less than x. 0+1 = 1, 3 + 5 = 8
     while(i < x)
-    {   //I quit lol, 
+    { 
         fibonacciArray.push(fibonacciArray[previousPosition] + fibonacciArray[i])
         previousPosition = i;
         i++;  
     }
-//I don't know how tf I did this, I just kept debugging until I got the desired output. 
+
     return x = fibonacciArray[previousPosition];
 }
